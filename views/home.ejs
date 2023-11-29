@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel || Maxmojo</title>
+  </head>
+  <body>
+    <h2>Create Category</h2>
+    <form action="/admin/create-contest" method="post" enctype="multipart/form-data">
+      <p>date</p>
+      <input type="datetime-local" name="date" id="" />
+      <p>poster</p>
+      <input type="file" name="poster" />
+      <p>category</p>
+      <select name="category">
+        <% categories.forEach((data)=>{ %>
+        <option value="<%= data.icon %>"><%= data.title %></option>
+        <% }) %>
+      </select>
+      <p>username</p>
+      <input type="text" name="username" id="" />
+      <p>password</p>
+      <input type="text" name="password" id="" />
+      <p>map</p>
+      <input type="text" name="map" id="" />
+      <p>prize</p>
+      <input type="text" name="prize" id="" />
+      <p>entry</p>
+      <input type="text" name="entry" id="" />
+      <p>type</p>
+      <input type="text" name="type" id="" />
+      <p>perKill</p>
+      <input type="text" name="perKill" id="" />
+      <p>totalSpots</p>
+      <input type="text" name="totalSpots" id="" />
+      <p>rules</p>
+      <textarea name="rules" > </textarea>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

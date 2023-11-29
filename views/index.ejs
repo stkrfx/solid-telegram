@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Upload Example</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      video {
+        margin-top: 20px;
+        width: 500;
+        height: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="videoInput" accept="video/*" />
+    <video id="uploadedVideo" controls></video>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const videoInput = document.getElementById("videoInput");
+        const uploadedVideo = document.getElementById("uploadedVideo");
+
+        videoInput.addEventListener("change", function () {
+          const file = this.files[0];
+
+          if (file) {
+            const objectURL = URL.createObjectURL(file);
+            uploadedVideo.src = objectURL;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
