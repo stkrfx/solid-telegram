@@ -337,7 +337,7 @@ app.get("/generate-random-content", async (req, res) => {
 
       const source = `./public/content/${Date.now()}-reel.mp4`;
       const format = ytdl.chooseFormat(videoInfo.formats, {
-        quality: "highest",
+        quality: '18',
       });
       const stream = ytdl(element.videoId, { format });
       stream.pipe(fs.createWriteStream(source));
